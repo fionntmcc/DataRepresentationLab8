@@ -1,6 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NavigationBar from './components/NavigationBar';
+
+// register components for app
 import Header from './components/header';
 import Footer from './components/footer';
 import Content from './components/content';

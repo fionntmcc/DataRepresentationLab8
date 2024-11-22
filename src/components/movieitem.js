@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Card from 'react-bootstrap/Card';
 
+// Provides linking to other app routes.
 import { Link } from 'react-router-dom';
 
 const MovieItem = (props)=> {
@@ -17,6 +18,7 @@ const MovieItem = (props)=> {
             <img src={props.mymovie.poster} alt={props.mymovie.title} />
             <footer>{props.mymovie.year}</footer>
           </blockquote>
+          {/* Link to /edit/:id */}
           <Link to={"/edit/" + props.mymovie._id} className="btn btn-primary">Edit</Link>
         </Card.Body>
       </Card>

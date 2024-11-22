@@ -51,7 +51,25 @@ app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
 
+// Fetches the specific movie's info.
+// Takes updated details from req.body 
+// and updates the movie in the DB.
+// returns updated movie to confirm the change.
 
+app.get('/api/movie/:id', async (req, res) => {
+  let movie = await movieModel.findById({ _id: req.params.id });
+  res.send(movie);
+});
+
+// Updates the  specific movie's info.
+// User submits the edited data.
+// Route takes the updated details from req.body.
+// Updates the movie in the DB.
+// Returns updated movie to confirm the change
+app.put('/api/movie/:id', async (req, res) => {
+  let movie = await movieModel.findByIdAndUpdate(req.params.id, req.body, { new: true });
+  res.send(movie);
+});
 
 // {
 //   "Title": "Avengers: Infinity War (server)",

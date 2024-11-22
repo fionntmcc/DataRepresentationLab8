@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
-export default function Edit(props) {
+export default function Edit() {
   let { id } = useParams();
   const [title, setTitle] = useState("");
   const [year, setYear] = useState("");
